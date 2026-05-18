@@ -1,6 +1,6 @@
-use std::collections::HashMap;
-use serde::{Deserialize, Serialize};
 use crate::parser::{LogEntry, LogLevel};
+use serde::{Deserialize, Serialize};
+use std::collections::HashMap;
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Analysis {
@@ -13,7 +13,10 @@ pub struct Analysis {
 }
 
 pub fn analyze(entries: &[LogEntry]) -> Analysis {
-    let error_count = entries.iter().filter(|e| e.level == LogLevel::Error).count();
+    let error_count = entries
+        .iter()
+        .filter(|e| e.level == LogLevel::Error)
+        .count();
     let warn_count = entries.iter().filter(|e| e.level == LogLevel::Warn).count();
     let info_count = entries.iter().filter(|e| e.level == LogLevel::Info).count();
 
@@ -25,7 +28,11 @@ pub fn analyze(entries: &[LogEntry]) -> Analysis {
 
     let mut top_errors: Vec<(String, usize)> = pattern_counts.into_iter().collect();
     top_errors.sort_by(|a, b| b.1.cmp(&a.1));
-    let top_errors: Vec<String> = top_errors.into_iter().take(5).map(|(k, v)| format!("[{}x] {}", v, k)).collect();
+    let top_errors: Vec<String> = top_errors
+        .into_iter()
+        .take(5)
+        .map(|(k, v)| format!("[{}x] {}", v, k))
+        .collect();
 
     let anomalies = detect_anomalies(entries);
 
@@ -41,10 +48,16 @@ pub fn analyze(entries: &[LogEntry]) -> Analysis {
 
 fn detect_anomalies(entries: &[LogEntry]) -> Vec<String> {
     let mut anomalies = Vec::new();
-    let error_rate = entries.iter().filter(|e| e.level == LogLevel::Error).count() as f64
+    let error_rate = entries
+        .iter()
+        .filter(|e| e.level == LogLevel::Error)
+        .count() as f64
         / entries.len().max(1) as f64;
     if error_rate > 0.1 {
-        anomalies.push(format!("High error rate: {:.1}% of log lines are errors", error_rate * 100.0));
+        anomalies.push(format!(
+            "High error rate: {:.1}% of log lines are errors",
+            error_rate * 100.0
+        ));
     }
     anomalies
 }

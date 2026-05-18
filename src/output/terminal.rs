@@ -5,9 +5,21 @@ pub fn print(report: &ScopeReport) {
     println!("\n{}", "LogScope Report".bold().underline());
     println!("{} {}", "Path:".bold(), report.path);
     println!("{} {}", "Total Lines:".bold(), report.total_lines);
-    println!("{} {}", "Errors:".bold(), report.error_count.to_string().red());
-    println!("{} {}", "Warnings:".bold(), report.warn_count.to_string().yellow());
-    println!("{} {}", "Info:".bold(), report.info_count.to_string().cyan());
+    println!(
+        "{} {}",
+        "Errors:".bold(),
+        report.error_count.to_string().red()
+    );
+    println!(
+        "{} {}",
+        "Warnings:".bold(),
+        report.warn_count.to_string().yellow()
+    );
+    println!(
+        "{} {}",
+        "Info:".bold(),
+        report.info_count.to_string().cyan()
+    );
 
     let health_colored = match report.health {
         Health::Good => "Good".green().bold(),

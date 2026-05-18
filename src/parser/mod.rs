@@ -17,7 +17,11 @@ pub enum LogLevel {
 }
 
 pub fn parse(content: &str) -> Vec<LogEntry> {
-    content.lines().filter(|l| !l.trim().is_empty()).map(parse_line).collect()
+    content
+        .lines()
+        .filter(|l| !l.trim().is_empty())
+        .map(parse_line)
+        .collect()
 }
 
 fn parse_line(line: &str) -> LogEntry {

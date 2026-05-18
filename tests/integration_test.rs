@@ -137,7 +137,10 @@ fn test_zero_errors_is_good() {
 
 #[test]
 fn test_few_errors_is_degraded() {
-    let log = (0..5).map(|_| "ERROR something failed").collect::<Vec<_>>().join("\n");
+    let log = (0..5)
+        .map(|_| "ERROR something failed")
+        .collect::<Vec<_>>()
+        .join("\n");
     let entries = parser::parse(&log);
     let analysis = analyzer::analyze(&entries);
     let rep = report::build("app.log", &entries, &analysis);
@@ -146,7 +149,10 @@ fn test_few_errors_is_degraded() {
 
 #[test]
 fn test_many_errors_is_critical() {
-    let log = (0..15).map(|_| "ERROR something failed").collect::<Vec<_>>().join("\n");
+    let log = (0..15)
+        .map(|_| "ERROR something failed")
+        .collect::<Vec<_>>()
+        .join("\n");
     let entries = parser::parse(&log);
     let analysis = analyzer::analyze(&entries);
     let rep = report::build("app.log", &entries, &analysis);
