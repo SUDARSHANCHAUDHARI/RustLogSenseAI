@@ -1,0 +1,26 @@
+[package]
+name = "logscope"
+version = "0.1.0"
+edition = "2021"
+authors = ["Sudarshan Chaudhari <sunny.sudarshan@gmail.com>"]
+description = "Log parser and analyzer — detect anomalies, count errors, produce summaries"
+license = "MIT"
+
+[[bin]]
+name = "logscope"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+anyhow = "1"
+thiserror = "2"
+regex = "1"
+colored = "2"
+chrono = { version = "0.4", features = ["serde"] }
+
+[dev-dependencies]
+assert_cmd = "2"
+predicates = "3"
+tempfile = "3"
