@@ -1,6 +1,6 @@
-use serde::{Deserialize, Serialize};
 use crate::analyzer::Analysis;
 use crate::parser::LogEntry;
+use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct ScopeReport {
