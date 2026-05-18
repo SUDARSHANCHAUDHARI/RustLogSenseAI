@@ -6,6 +6,10 @@ authors = ["Sudarshan Chaudhari <sunny.sudarshan@gmail.com>"]
 description = "Log parser and analyzer — detect anomalies, count errors, produce summaries"
 license = "MIT"
 
+[lib]
+name = "logscope"
+path = "src/lib.rs"
+
 [[bin]]
 name = "logscope"
 path = "src/main.rs"

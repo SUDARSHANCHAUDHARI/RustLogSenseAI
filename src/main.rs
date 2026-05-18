@@ -1,8 +1,7 @@
-mod analyzer;
 mod cli;
 mod output;
-mod parser;
-mod report;
+
+use logscope::{analyzer, parser, report};
 
 use anyhow::Result;
 use clap::Parser;

@@ -1,5 +1,5 @@
 use colored::Colorize;
-use crate::report::{Health, ScopeReport};
+use logscope::report::{Health, ScopeReport};
 
 pub fn print(report: &ScopeReport) {
     println!("\n{}", "LogScope Report".bold().underline());
