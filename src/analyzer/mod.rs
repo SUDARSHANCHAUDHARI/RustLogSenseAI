@@ -1,5 +1,6 @@
 use crate::parser::{LogEntry, LogLevel};
 use serde::{Deserialize, Serialize};
+use std::cmp::Reverse;
 use std::collections::HashMap;
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -27,7 +28,7 @@ pub fn analyze(entries: &[LogEntry]) -> Analysis {
     }
 
     let mut top_errors: Vec<(String, usize)> = pattern_counts.into_iter().collect();
-    top_errors.sort_by(|a, b| b.1.cmp(&a.1));
+    top_errors.sort_by_key(|entry| Reverse(entry.1));
     let top_errors: Vec<String> = top_errors
         .into_iter()
         .take(5)
