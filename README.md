@@ -51,6 +51,33 @@ logscope scan app.log
 logscope scan app.log --json
 ```
 
+## Included Example
+
+The repository includes a sample log file:
+
+```bash
+logscope scan examples/app.sample
+```
+
+Real output:
+
+```text
+LogScope Report
+Path: examples/app.sample
+Total Lines: 9
+Errors: 3
+Warnings: 1
+Info: 4
+Health: Degraded
+
+Top Errors:
+  [2x] ERROR connection refused to db host
+  [1x] ERROR timeout after 30s
+
+Anomalies:
+  High error rate: 33.3% of log lines are errors
+```
+
 ## Log Level Detection
 
 | Keyword | Level |
@@ -93,7 +120,7 @@ Anomalies:
 JSON output is useful for CI, scheduled jobs, local troubleshooting scripts, and dashboards that need a lightweight summary without parsing terminal text.
 
 ```bash
-logscope scan app.log --json > report.json
+logscope scan examples/app.sample --json > report.json
 ```
 
 ## Development
