@@ -1,10 +1,12 @@
 [package]
 name = "logscope"
-version = "0.1.0"
+version = "1.0.0"
 edition = "2021"
 authors = ["Sudarshan Chaudhari <sunny.sudarshan@gmail.com>"]
 description = "Log parser and analyzer — detect anomalies, count errors, produce summaries"
 license = "MIT"
+repository = "https://github.com/SUDARSHANCHAUDHARI/RustLogSenseAI"
+readme = "README.md"
 
 [lib]
 name = "logscope"
