@@ -7,6 +7,8 @@ description = "Log parser and analyzer — detect anomalies, count errors, produ
 license = "MIT"
 repository = "https://github.com/SUDARSHANCHAUDHARI/RustLogSenseAI"
 readme = "README.md"
+keywords = ["logs", "parser", "anomaly", "cli", "analysis"]
+categories = ["command-line-utilities", "development-tools"]
 
 [lib]
 name = "logscope"
