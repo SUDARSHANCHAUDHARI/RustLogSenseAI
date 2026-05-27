@@ -1,0 +1,9 @@
+INFO server started on port 8080
+INFO connected to database
+WARN cache warmup took 932ms
+ERROR connection refused to db host
+ERROR connection refused to db host
+INFO retrying request
+DEBUG retry attempt 1
+ERROR timeout after 30s
+INFO shutdown complete
