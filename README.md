@@ -49,6 +49,9 @@ logscope scan app.log
 
 # Emit JSON
 logscope scan app.log --json
+
+# Read from stdin
+cat app.log | logscope scan -
 ```
 
 ## Included Example
@@ -57,6 +60,8 @@ The repository includes a sample log file:
 
 ```bash
 logscope scan examples/app.sample
+
+cat examples/app.sample | logscope scan -
 ```
 
 Real output:
@@ -77,6 +82,8 @@ Top Errors:
 Anomalies:
   High error rate: 33.3% of log lines are errors
 ```
+
+When the path is `-`, LogScope reads all input from stdin and reports the source as `<stdin>`.
 
 ## Log Level Detection
 
@@ -132,7 +139,7 @@ cargo test
 cargo build --release
 ```
 
-The integration test suite covers parser behavior, health thresholds, anomaly detection, top error grouping, and CLI output.
+The integration test suite covers parser behavior, health thresholds, anomaly detection, top error grouping, file input, stdin input, and CLI output.
 
 ## Project Structure
 
