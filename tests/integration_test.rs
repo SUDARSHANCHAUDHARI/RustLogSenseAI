@@ -189,3 +189,15 @@ fn test_cli_scan_terminal_output() {
         .success()
         .stdout(contains("LogScope Report"));
 }
+
+#[test]
+fn test_cli_scan_reads_stdin_when_path_is_dash() {
+    Command::cargo_bin("logscope")
+        .unwrap()
+        .args(["scan", "-"])
+        .write_stdin("INFO server started\nERROR connection failed\n")
+        .assert()
+        .success()
+        .stdout(contains("LogScope Report"))
+        .stdout(contains("Errors: 1"));
+}

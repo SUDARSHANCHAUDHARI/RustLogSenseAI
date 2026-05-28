@@ -5,8 +5,11 @@ This is a solo-maintained roadmap. Items are practical possibilities, not promis
 ## Planned
 
 - Add configurable error-rate thresholds.
-- Add support for reading from stdin.
 - Add a Markdown summary output mode.
+
+## Completed
+
+- Stdin input support with `logscope scan -`.
 
 ## Maybe Later
 
