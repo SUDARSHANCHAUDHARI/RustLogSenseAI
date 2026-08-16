@@ -2,7 +2,7 @@
 
 ## 1.1.0 - 2026-05-28
 
-- Added stdin support with `logscope scan -`.
+- Added stdin support with `logsenseai scan -`.
 
 ## 1.0.0 - 2026-05-27
 

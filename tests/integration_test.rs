@@ -10,7 +10,7 @@ use tempfile::NamedTempFile;
 
 #[test]
 fn test_help() {
-    Command::cargo_bin("logscope")
+    Command::cargo_bin("logsenseai")
         .unwrap()
         .arg("--help")
         .assert()
@@ -20,7 +20,7 @@ fn test_help() {
 
 #[test]
 fn test_scan_subcommand_help() {
-    Command::cargo_bin("logscope")
+    Command::cargo_bin("logsenseai")
         .unwrap()
         .args(["scan", "--help"])
         .assert()
@@ -168,7 +168,7 @@ fn test_cli_scan_json_output() {
     writeln!(tmp, "ERROR connection failed").unwrap();
     writeln!(tmp, "WARN high memory usage").unwrap();
 
-    Command::cargo_bin("logscope")
+    Command::cargo_bin("logsenseai")
         .unwrap()
         .args(["scan", tmp.path().to_str().unwrap(), "--json"])
         .assert()
@@ -182,7 +182,7 @@ fn test_cli_scan_terminal_output() {
     writeln!(tmp, "INFO server started").unwrap();
     writeln!(tmp, "ERROR connection failed").unwrap();
 
-    Command::cargo_bin("logscope")
+    Command::cargo_bin("logsenseai")
         .unwrap()
         .args(["scan", tmp.path().to_str().unwrap()])
         .assert()
@@ -192,7 +192,7 @@ fn test_cli_scan_terminal_output() {
 
 #[test]
 fn test_cli_scan_reads_stdin_when_path_is_dash() {
-    Command::cargo_bin("logscope")
+    Command::cargo_bin("logsenseai")
         .unwrap()
         .args(["scan", "-"])
         .write_stdin("INFO server started\nERROR connection failed\n")
