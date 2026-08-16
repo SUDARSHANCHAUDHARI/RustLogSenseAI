@@ -32,7 +32,7 @@ cargo build --release
 The binary is created at:
 
 ```bash
-target/release/logscope
+target/release/logsenseai
 ```
 
 Optional local install:
@@ -45,13 +45,13 @@ cargo install --path .
 
 ```bash
 # Scan a log file
-logscope scan app.log
+logsenseai scan app.log
 
 # Emit JSON
-logscope scan app.log --json
+logsenseai scan app.log --json
 
 # Read from stdin
-cat app.log | logscope scan -
+cat app.log | logsenseai scan -
 ```
 
 ## Included Example
@@ -59,9 +59,9 @@ cat app.log | logscope scan -
 The repository includes a sample log file:
 
 ```bash
-logscope scan examples/app.sample
+logsenseai scan examples/app.sample
 
-cat examples/app.sample | logscope scan -
+cat examples/app.sample | logsenseai scan -
 ```
 
 Real output:
@@ -127,7 +127,7 @@ Anomalies:
 JSON output is useful for CI, scheduled jobs, local troubleshooting scripts, and dashboards that need a lightweight summary without parsing terminal text.
 
 ```bash
-logscope scan examples/app.sample --json > report.json
+logsenseai scan examples/app.sample --json > report.json
 ```
 
 ## Development
