@@ -14,11 +14,11 @@ RustLogSenseAI is a good solo-dev operations story: use a tiny Rust CLI to under
 
 ## Auto-Blog Prompt Seed
 
-Write a practical blog post about using a small Rust CLI to summarize application logs. Include a sample log file, the `logscope scan` command, stdin usage with `cat app.log | logscope scan -`, terminal output, JSON output, and a section on when this should not replace real observability.
+Write a practical blog post about using a small Rust CLI to summarize application logs. Include a sample log file, the `logsenseai scan` command, stdin usage with `cat app.log | logsenseai scan -`, terminal output, JSON output, and a section on when this should not replace real observability.
 
 ## Useful Examples
 
 - `examples/app.sample`
-- `cat examples/app.sample | logscope scan -`
+- `cat examples/app.sample | logsenseai scan -`
 - Error-rate anomaly example.
 - Repeated error summary.

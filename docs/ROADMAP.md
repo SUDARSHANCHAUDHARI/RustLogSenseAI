@@ -9,7 +9,7 @@ This is a solo-maintained roadmap. Items are practical possibilities, not promis
 
 ## Completed
 
-- Stdin input support with `logscope scan -`.
+- Stdin input support with `logsenseai scan -`.
 
 ## Maybe Later
 
