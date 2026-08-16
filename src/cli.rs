@@ -2,7 +2,7 @@ use clap::{Parser, Subcommand};
 
 #[derive(Parser)]
 #[command(
-    name = "logscope",
+    name = "logsenseai",
     about = "Log parser and analyzer — detect anomalies and summarize logs",
     version
 )]
